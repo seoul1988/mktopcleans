@@ -19,7 +19,7 @@ export async function POST(req: Request) {
 
     const { data, error } = await resend.emails.send({
       from: "MK Top Cleans <onboarding@resend.dev>",
-      to: ["mbsproinc@gmail.com"],
+      to: ["fcbs2023@gmail.com"],
       subject: "New Quote Request - MK Top Cleans",
       replyTo: email || undefined,
       html: `
