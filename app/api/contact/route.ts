@@ -26,21 +26,21 @@ export async function POST(req: Request) {
       );
     }
 
-    const result = await resend.emails.send({
-      from: "MK Top Cleans <onboarding@resend.dev>",
-      to: ["sales@mktopcleans.com"],
-      subject: "New Quote Request - MK Top Cleans",
-      replyTo: email || undefined,
-      html: `
-        <h2>New Quote Request</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email || "N/A"}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Facility Type:</strong> ${facilityType || "N/A"}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message || "N/A"}</p>
-      `,
-    });
+   const result = await resend.emails.send({
+  from: "MK Top Cleans <onboarding@resend.dev>",
+  to: ["mbsproinc@gmail.com"],
+  subject: "New Quote Request - MK Top Cleans",
+  replyTo: email || undefined,
+  html: `
+    <h2>New Quote Request</h2>
+    <p><strong>Name:</strong> ${name}</p>
+    <p><strong>Email:</strong> ${email || "N/A"}</p>
+    <p><strong>Phone:</strong> ${phone}</p>
+    <p><strong>Facility Type:</strong> ${facilityType || "N/A"}</p>
+    <p><strong>Message:</strong></p>
+    <p>${message || "N/A"}</p>
+  `,
+});
 
     return NextResponse.json({ success: true, result });
   } catch (error) {
