@@ -1,15 +1,20 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-white text-[#13294B]">
       <header className="sticky top-0 z-50 border-b bg-white/95 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-         <div className="flex items-center">
-			  <img
-				src="/mk-logo.png"
-				alt="MK Top Cleans"
-				className="h-14 w-auto md:h-20"
-			  />
-			</div>
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
+          <a href="#" className="flex items-center">
+            <Image
+              src="/mk-logo.png"
+              alt="MK Top Cleans"
+              width={260}
+              height={90}
+              priority
+              className="h-14 w-auto md:h-16"
+            />
+          </a>
 
           <nav className="hidden gap-6 text-sm font-black md:flex">
             <a href="#">HOME</a>
@@ -34,13 +39,22 @@ export default function Home() {
 
         <div className="relative mx-auto flex min-h-[620px] max-w-7xl items-center px-6 text-white">
           <div className="max-w-3xl">
+            <Image
+              src="/mk-logo.png"
+              alt="MK Top Cleans"
+              width={360}
+              height={130}
+              priority
+              className="mb-8 h-24 w-auto rounded-xl bg-white/95 p-3 shadow-lg md:h-28"
+            />
+
             <p className="mb-4 text-sm font-black tracking-[0.25em] text-[#7DD3FC]">
               MEDICAL FACILITY & COMMERCIAL CLEANING
             </p>
 
-            <h2 className="text-4xl font-black leading-tight md:text-6xl">
+            <h1 className="text-4xl font-black leading-tight md:text-6xl">
               Professional Cleaning Services Throughout North Carolina
-            </h2>
+            </h1>
 
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-100">
               Reliable cleaning for medical offices, clinics, hospitals,
@@ -70,25 +84,50 @@ export default function Home() {
         <p className="text-center text-sm font-black tracking-widest text-[#0B3A75]">
           OUR SERVICES
         </p>
-        <h3 className="mb-10 text-center text-3xl font-black md:text-4xl">
+
+        <h2 className="mb-10 text-center text-3xl font-black md:text-4xl">
           Cleaning Solutions for Professional Facilities
-        </h3>
+        </h2>
 
         <div className="grid gap-6 md:grid-cols-3">
           {[
-            ["🏥", "Medical Facility Cleaning", "Clinics, exam rooms, waiting areas, healthcare offices, and medical facilities."],
-            ["🧼", "Hospital & Healthcare Support", "Reliable cleaning support for healthcare environments requiring consistency."],
-            ["🏢", "Office Cleaning", "Daily, weekly, and customized cleaning for professional offices and buildings."],
-            ["✨", "Floor Care", "Stripping, waxing, buffing, and regular commercial floor maintenance."],
-            ["🧹", "Janitorial Services", "Routine cleaning for offices, schools, churches, and commercial facilities."],
-            ["🚻", "Restroom & Common Areas", "Restroom sanitation, trash removal, lobbies, hallways, and break rooms."],
+            [
+              "🏥",
+              "Medical Facility Cleaning",
+              "Clinics, exam rooms, waiting areas, healthcare offices, and medical facilities.",
+            ],
+            [
+              "🧼",
+              "Hospital & Healthcare Support",
+              "Reliable cleaning support for healthcare environments requiring consistency.",
+            ],
+            [
+              "🏢",
+              "Office Cleaning",
+              "Daily, weekly, and customized cleaning for professional offices and buildings.",
+            ],
+            [
+              "✨",
+              "Floor Care",
+              "Stripping, waxing, buffing, and regular commercial floor maintenance.",
+            ],
+            [
+              "🧹",
+              "Janitorial Services",
+              "Routine cleaning for offices, schools, churches, and commercial facilities.",
+            ],
+            [
+              "🚻",
+              "Restroom & Common Areas",
+              "Restroom sanitation, trash removal, lobbies, hallways, and break rooms.",
+            ],
           ].map(([icon, title, text]) => (
             <div
               key={title}
               className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
             >
               <div className="mb-4 text-4xl">{icon}</div>
-              <h4 className="mb-3 text-xl font-black">{title}</h4>
+              <h3 className="mb-3 text-xl font-black">{title}</h3>
               <p className="leading-7 text-slate-600">{text}</p>
             </div>
           ))}
@@ -102,9 +141,9 @@ export default function Home() {
               ABOUT MK TOP CLEANS
             </p>
 
-            <h3 className="mb-5 text-3xl font-black md:text-4xl">
+            <h2 className="mb-5 text-3xl font-black md:text-4xl">
               Trusted Commercial Cleaning Since 2001
-            </h3>
+            </h2>
 
             <div className="space-y-4 leading-8 text-slate-700">
               <p>
@@ -133,17 +172,19 @@ export default function Home() {
           </div>
 
           <div className="rounded-3xl bg-[#13294B] p-8 text-white shadow-xl">
-            <h4 className="mb-6 text-2xl font-black">By The Numbers</h4>
+            <h3 className="mb-6 text-2xl font-black">By The Numbers</h3>
 
             <div className="space-y-6">
               <div>
                 <p className="text-4xl font-black text-[#7DD3FC]">2,000,000+</p>
                 <p>Square Feet Managed</p>
               </div>
+
               <div>
                 <p className="text-4xl font-black text-[#7DD3FC]">2001</p>
                 <p>Serving Clients Since</p>
               </div>
+
               <div>
                 <p className="text-4xl font-black text-[#7DD3FC]">20+ Years</p>
                 <p>Commercial Cleaning Experience</p>
@@ -151,7 +192,7 @@ export default function Home() {
             </div>
 
             <div className="mt-8 border-t border-white/20 pt-6">
-              <h5 className="mb-3 text-xl font-black">Service Areas</h5>
+              <h4 className="mb-3 text-xl font-black">Service Areas</h4>
               <p>
                 Raleigh, Durham, Greensboro, Fayetteville, Wilson, Greenville
                 and commercial clients throughout North Carolina.
@@ -166,9 +207,9 @@ export default function Home() {
       <section className="bg-[#0B3A75] px-6 py-16 text-white">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 md:flex-row md:items-center">
           <div>
-            <h3 className="text-3xl font-black">
+            <h2 className="text-3xl font-black">
               Need Reliable Cleaning for Your Facility?
-            </h3>
+            </h2>
             <p className="mt-2 text-slate-200">
               Request a free quote for medical, office, and commercial cleaning.
             </p>
@@ -189,9 +230,9 @@ export default function Home() {
             <p className="mb-3 text-sm font-black tracking-widest text-[#0B3A75]">
               REQUEST A QUOTE
             </p>
-            <h3 className="mb-4 text-3xl font-black md:text-4xl">
+            <h2 className="mb-4 text-3xl font-black md:text-4xl">
               Let’s Talk About Your Building
-            </h3>
+            </h2>
             <p className="leading-8 text-slate-700">
               Tell us about your facility, square footage, service schedule, and
               cleaning needs. We will contact you to discuss the best service
@@ -203,7 +244,10 @@ export default function Home() {
             <input className="mb-4 w-full rounded-lg border p-3" placeholder="Name" />
             <input className="mb-4 w-full rounded-lg border p-3" placeholder="Email" />
             <input className="mb-4 w-full rounded-lg border p-3" placeholder="Phone" />
-            <input className="mb-4 w-full rounded-lg border p-3" placeholder="Facility Type" />
+            <input
+              className="mb-4 w-full rounded-lg border p-3"
+              placeholder="Facility Type"
+            />
             <textarea
               className="mb-4 h-32 w-full rounded-lg border p-3"
               placeholder="Message"
@@ -221,14 +265,20 @@ export default function Home() {
       <footer id="contact" className="bg-[#13294B] px-6 py-12 text-white">
         <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-3">
           <div>
-            <h3 className="text-2xl font-black">MK Top Cleans</h3>
-            <p className="mt-2 text-slate-300">Professional Cleaning Services</p>
+            <Image
+              src="/mk-logo.png"
+              alt="MK Top Cleans"
+              width={260}
+              height={90}
+              className="mb-5 h-16 w-auto rounded-lg bg-white p-2"
+            />
+            <p className="text-slate-300">Professional Cleaning Services</p>
             <p className="mt-6 font-semibold">Phone: 919-671-0248</p>
             <p className="font-semibold">Email: sales@mktopcleans.com</p>
           </div>
 
           <div>
-            <h4 className="mb-4 text-xl font-black">Business Hours</h4>
+            <h3 className="mb-4 text-xl font-black">Business Hours</h3>
             <p>Monday - Friday</p>
             <p>9:00 AM - 5:00 PM</p>
             <p className="mt-4 text-sm text-slate-300">
@@ -237,7 +287,7 @@ export default function Home() {
           </div>
 
           <div>
-            <h4 className="mb-4 text-xl font-black">Emergency Contact</h4>
+            <h3 className="mb-4 text-xl font-black">Emergency Contact</h3>
             <p className="font-semibold">24/7 Emergency Response</p>
             <p className="mt-2">Phone: 919-671-0248</p>
             <p className="mt-4 text-sm text-slate-300">
