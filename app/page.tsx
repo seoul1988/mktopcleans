@@ -80,7 +80,9 @@ export default function Home() {
 setSending(false);
 
 if (res.ok) {
-  alert("Quote request sent successfully.");
+  alert(
+  "Thank you for contacting MK Top Cleans. We have received your request and will contact you shortly."
+);
   e.currentTarget.reset();
 } else {
   alert(`Failed: ${JSON.stringify(result)}`);
