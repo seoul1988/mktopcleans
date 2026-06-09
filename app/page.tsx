@@ -9,10 +9,10 @@ export default function Home() {
             <Image
               src="/mk-logo.png"
               alt="MK Top Cleans"
-              width={320}
+              width={400}
               height={140}
               priority
-              className="h-14 w-auto md:h-16"
+              className="h-20 w-auto md:h-24"
             />
           </a>
 
