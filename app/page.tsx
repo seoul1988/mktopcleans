@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-[#13294B]">
       <header className="sticky top-0 z-50 border-b bg-white/95 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-1">
           <a href="#" className="flex items-center">
   <Image
     src="/mk-logo.png"
@@ -241,17 +241,14 @@ export default function Home() {
               className="mb-4 w-full rounded-lg border p-3"
               placeholder="Facility Type"
             />
-            <textarea
-              className="mb-4 h-32 w-full rounded-lg border p-3"
-              placeholder="Message"
-            />
-            <a
-              href="mailto:sales@mktopcleans.com"
-              className="block rounded-full bg-[#13294B] px-6 py-3 text-center font-black text-white"
-            >
-              Send Request
-            </a>
-          </form>
+           
+           <a
+			  href="mailto:sales@mktopcleans.com?subject=Request%20a%20Quote%20-%20MK%20Top%20Cleans&body=Name:%0D%0APhone:%0D%0AFacility%20Type:%0D%0AMessage:%0D%0A"
+			  className="block rounded-full bg-[#13294B] px-6 py-3 text-center font-black text-white"
+			>
+			  Email Us for a Quote
+			</a>
+       
         </div>
       </section>
 
