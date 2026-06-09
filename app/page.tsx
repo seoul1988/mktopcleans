@@ -1,16 +1,16 @@
 export default function Home() {
   return (
     <main className="min-h-screen bg-white text-[#13294B]">
-      <header className="border-b bg-white">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <header className="sticky top-0 z-50 border-b bg-white/95 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <div>
             <h1 className="text-2xl font-black">MK Top Cleans</h1>
-            <p className="text-xs font-bold tracking-widest text-gray-500">
+            <p className="text-xs font-bold tracking-widest text-slate-500">
               PROFESSIONAL CLEANING SERVICES
             </p>
           </div>
 
-          <nav className="hidden gap-6 text-sm font-bold md:flex">
+          <nav className="hidden gap-6 text-sm font-black md:flex">
             <a href="#">HOME</a>
             <a href="#services">SERVICES</a>
             <a href="#about">ABOUT</a>
@@ -20,157 +20,140 @@ export default function Home() {
 
           <a
             href="tel:9196710248"
-            className="rounded-full bg-[#13294B] px-5 py-2 text-sm font-bold text-white"
+            className="rounded-full bg-[#0B3A75] px-5 py-2 text-sm font-black text-white shadow"
           >
             Call 919-671-0248
           </a>
         </div>
       </header>
 
-      <section className="relative bg-[#13294B]">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center opacity-35" />
-        <div className="relative mx-auto max-w-6xl px-6 py-28 text-white">
-          <p className="mb-3 text-sm font-bold tracking-widest">
-            MEDICAL FACILITY & COMMERCIAL CLEANING
-          </p>
+      <section className="relative overflow-hidden bg-[#13294B]">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1800&q=80')] bg-cover bg-center opacity-40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#071B35] via-[#13294B]/85 to-[#13294B]/20" />
 
-          <h2 className="max-w-3xl text-4xl font-black leading-tight md:text-6xl">
-            Professional Cleaning Services Throughout North Carolina
-          </h2>
+        <div className="relative mx-auto flex min-h-[620px] max-w-7xl items-center px-6 text-white">
+          <div className="max-w-3xl">
+            <p className="mb-4 text-sm font-black tracking-[0.25em] text-[#7DD3FC]">
+              MEDICAL FACILITY & COMMERCIAL CLEANING
+            </p>
 
-          <p className="mt-5 max-w-2xl text-lg text-gray-100">
-            MK Top Cleans provides dependable janitorial and commercial cleaning
-            services for medical offices, clinics, hospitals, professional
-            buildings, and commercial facilities.
-          </p>
+            <h2 className="text-4xl font-black leading-tight md:text-6xl">
+              Professional Cleaning Services Throughout North Carolina
+            </h2>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a
-              href="#quote"
-              className="rounded-full bg-white px-7 py-3 text-center font-black text-[#13294B]"
-            >
-              Request a Quote
-            </a>
-            <a
-              href="tel:9196710248"
-              className="rounded-full border border-white px-7 py-3 text-center font-black text-white"
-            >
-              Call Now
-            </a>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-100">
+              Reliable cleaning for medical offices, clinics, hospitals,
+              professional buildings, schools, churches, and commercial
+              facilities.
+            </p>
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="#quote"
+                className="rounded-full bg-white px-7 py-3 text-center font-black text-[#13294B]"
+              >
+                Request a Quote
+              </a>
+              <a
+                href="tel:9196710248"
+                className="rounded-full border border-white px-7 py-3 text-center font-black text-white"
+              >
+                Call Now
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="services" className="mx-auto max-w-6xl px-6 py-16">
-        <h3 className="mb-8 text-3xl font-black">Our Services</h3>
+      <section id="services" className="mx-auto max-w-7xl px-6 py-20">
+        <p className="text-center text-sm font-black tracking-widest text-[#0B3A75]">
+          OUR SERVICES
+        </p>
+        <h3 className="mb-10 text-center text-3xl font-black md:text-4xl">
+          Cleaning Solutions for Professional Facilities
+        </h3>
 
         <div className="grid gap-6 md:grid-cols-3">
           {[
-            [
-              "Medical Facility Cleaning",
-              "Detail-focused cleaning for clinics, exam rooms, waiting areas, healthcare offices, and medical facilities.",
-            ],
-            [
-              "Hospital & Healthcare Support",
-              "Reliable cleaning support for healthcare environments that require consistency and attention to detail.",
-            ],
-            [
-              "Office Cleaning",
-              "Daily, weekly, and customized cleaning for professional offices and business buildings.",
-            ],
-            [
-              "Floor Care",
-              "Stripping, waxing, buffing, and regular floor maintenance for commercial properties.",
-            ],
-            [
-              "Janitorial Services",
-              "Dependable routine cleaning for offices, schools, churches, and commercial facilities.",
-            ],
-            [
-              "Restroom & Common Areas",
-              "Detailed restroom sanitation, trash removal, lobby cleaning, hallways, and break room maintenance.",
-            ],
-          ].map(([title, text]) => (
+            ["🏥", "Medical Facility Cleaning", "Clinics, exam rooms, waiting areas, healthcare offices, and medical facilities."],
+            ["🧼", "Hospital & Healthcare Support", "Reliable cleaning support for healthcare environments requiring consistency."],
+            ["🏢", "Office Cleaning", "Daily, weekly, and customized cleaning for professional offices and buildings."],
+            ["✨", "Floor Care", "Stripping, waxing, buffing, and regular commercial floor maintenance."],
+            ["🧹", "Janitorial Services", "Routine cleaning for offices, schools, churches, and commercial facilities."],
+            ["🚻", "Restroom & Common Areas", "Restroom sanitation, trash removal, lobbies, hallways, and break rooms."],
+          ].map(([icon, title, text]) => (
             <div
               key={title}
-              className="rounded-2xl border bg-white p-6 shadow-sm"
+              className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
             >
+              <div className="mb-4 text-4xl">{icon}</div>
               <h4 className="mb-3 text-xl font-black">{title}</h4>
-              <p className="text-gray-700">{text}</p>
+              <p className="leading-7 text-slate-600">{text}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section id="about" className="bg-gray-50">
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-2">
+      <section id="about" className="bg-[#F4F8FC]">
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-[1.2fr_0.8fr]">
           <div>
-            <p className="mb-3 text-sm font-black tracking-widest text-[#13294B]">
+            <p className="mb-3 text-sm font-black tracking-widest text-[#0B3A75]">
               ABOUT MK TOP CLEANS
             </p>
 
-            <h3 className="mb-4 text-3xl font-black">
+            <h3 className="mb-5 text-3xl font-black md:text-4xl">
               Trusted Commercial Cleaning Since 2001
             </h3>
 
-            <p className="mb-4 text-gray-700">
-              MK Top Cleans began serving commercial clients in Nashville,
-              Tennessee in 2001 and has grown into a trusted provider of
-              professional cleaning and facility maintenance services throughout
-              North Carolina.
-            </p>
+            <div className="space-y-4 leading-8 text-slate-700">
+              <p>
+                MK Top Cleans began serving commercial clients in Nashville,
+                Tennessee in 2001 and has grown into a trusted provider of
+                professional cleaning and facility maintenance services
+                throughout North Carolina.
+              </p>
 
-            <p className="mb-4 text-gray-700">
-              With the capability to manage more than{" "}
-              <strong>2 million square feet</strong> of commercial space, our
-              team delivers reliable, detail-oriented cleaning solutions for
-              healthcare facilities, medical offices, educational institutions,
-              corporate buildings, and large-scale commercial properties.
-            </p>
+              <p>
+                With the capability to manage more than{" "}
+                <strong>2 million square feet</strong> of commercial space, our
+                team delivers reliable, detail-oriented cleaning solutions for
+                healthcare facilities, medical offices, educational institutions,
+                corporate buildings, and large-scale commercial properties.
+              </p>
 
-            <p className="mb-4 text-gray-700">
-              Our experience includes servicing and supporting facilities
-              associated with respected organizations such as{" "}
-              <strong>UNC Health</strong>, <strong>WakeMed</strong>,{" "}
-              <strong>Duke Health</strong>, <strong>HP</strong>,<strong>BB&T</strong>, and other
-              leading businesses and institutions.
-            </p>
-
-            <p className="text-gray-700">
-              We understand that medical and professional environments demand
-              the highest standards of cleanliness, safety, and consistency. Our
-              mission is simple: keep your building clean, safe, and ready for
-              employees, patients, customers, and visitors.
-            </p>
+              <p>
+                Our experience includes servicing and supporting facilities
+                associated with respected organizations such as{" "}
+                <strong>UNC Health</strong>, <strong>WakeMed</strong>,{" "}
+                <strong>Duke Health</strong>, <strong>HP</strong>, and other
+                leading businesses and institutions.
+              </p>
+            </div>
           </div>
 
-          <div className="rounded-3xl bg-[#13294B] p-8 text-white">
+          <div className="rounded-3xl bg-[#13294B] p-8 text-white shadow-xl">
             <h4 className="mb-6 text-2xl font-black">By The Numbers</h4>
 
-            <div className="space-y-5">
+            <div className="space-y-6">
               <div>
-                <p className="text-4xl font-black">2,000,000+</p>
-                <p className="text-gray-200">Square Feet Managed</p>
+                <p className="text-4xl font-black text-[#7DD3FC]">2,000,000+</p>
+                <p>Square Feet Managed</p>
               </div>
-
               <div>
-                <p className="text-4xl font-black">2001</p>
-                <p className="text-gray-200">Serving Clients Since</p>
+                <p className="text-4xl font-black text-[#7DD3FC]">2001</p>
+                <p>Serving Clients Since</p>
               </div>
-
               <div>
-                <p className="text-4xl font-black">20+ Years</p>
-                <p className="text-gray-200">
-                  Commercial Cleaning Experience
-                </p>
+                <p className="text-4xl font-black text-[#7DD3FC]">20+ Years</p>
+                <p>Commercial Cleaning Experience</p>
               </div>
             </div>
 
             <div className="mt-8 border-t border-white/20 pt-6">
               <h5 className="mb-3 text-xl font-black">Service Areas</h5>
               <p>
-                Serving Raleigh, Durham, Greensboro, Fayetteville, Wilson,
-                Greenville and commercial clients throughout North Carolina.
+                Raleigh, Durham, Greensboro, Fayetteville, Wilson, Greenville
+                and commercial clients throughout North Carolina.
               </p>
               <p className="mt-6 font-bold">Phone: 919-671-0248</p>
               <p className="font-bold">Email: sales@mktopcleans.com</p>
@@ -179,26 +162,49 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="quote" className="mx-auto max-w-6xl px-6 py-16">
-        <div className="grid gap-10 md:grid-cols-2">
+      <section className="bg-[#0B3A75] px-6 py-16 text-white">
+        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 md:flex-row md:items-center">
           <div>
-            <h3 className="mb-4 text-3xl font-black">Request a Quote</h3>
-            <p className="text-gray-700">
-              Tell us about your building and cleaning needs. We will contact
-              you to discuss service options for your facility.
+            <h3 className="text-3xl font-black">
+              Need Reliable Cleaning for Your Facility?
+            </h3>
+            <p className="mt-2 text-slate-200">
+              Request a free quote for medical, office, and commercial cleaning.
             </p>
           </div>
 
-          <form className="rounded-2xl border bg-white p-6 shadow-sm">
-            <input className="mb-4 w-full border p-3" placeholder="Name" />
-            <input className="mb-4 w-full border p-3" placeholder="Email" />
-            <input className="mb-4 w-full border p-3" placeholder="Phone" />
-            <input
-              className="mb-4 w-full border p-3"
-              placeholder="Facility Type"
-            />
+          <a
+            href="#quote"
+            className="rounded-full bg-white px-8 py-3 font-black text-[#13294B]"
+          >
+            Get a Free Quote
+          </a>
+        </div>
+      </section>
+
+      <section id="quote" className="mx-auto max-w-7xl px-6 py-20">
+        <div className="grid gap-12 md:grid-cols-[1fr_1fr]">
+          <div>
+            <p className="mb-3 text-sm font-black tracking-widest text-[#0B3A75]">
+              REQUEST A QUOTE
+            </p>
+            <h3 className="mb-4 text-3xl font-black md:text-4xl">
+              Let’s Talk About Your Building
+            </h3>
+            <p className="leading-8 text-slate-700">
+              Tell us about your facility, square footage, service schedule, and
+              cleaning needs. We will contact you to discuss the best service
+              option for your location.
+            </p>
+          </div>
+
+          <form className="rounded-3xl border bg-white p-7 shadow-xl">
+            <input className="mb-4 w-full rounded-lg border p-3" placeholder="Name" />
+            <input className="mb-4 w-full rounded-lg border p-3" placeholder="Email" />
+            <input className="mb-4 w-full rounded-lg border p-3" placeholder="Phone" />
+            <input className="mb-4 w-full rounded-lg border p-3" placeholder="Facility Type" />
             <textarea
-              className="mb-4 h-32 w-full border p-3"
+              className="mb-4 h-32 w-full rounded-lg border p-3"
               placeholder="Message"
             />
             <a
@@ -211,62 +217,39 @@ export default function Home() {
         </div>
       </section>
 
-  <footer id="contact" className="bg-[#13294B] px-6 py-12 text-white">
-  <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-3">
+      <footer id="contact" className="bg-[#13294B] px-6 py-12 text-white">
+        <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-3">
+          <div>
+            <h3 className="text-2xl font-black">MK Top Cleans</h3>
+            <p className="mt-2 text-slate-300">Professional Cleaning Services</p>
+            <p className="mt-6 font-semibold">Phone: 919-671-0248</p>
+            <p className="font-semibold">Email: sales@mktopcleans.com</p>
+          </div>
 
-    <div>
-      <h3 className="text-2xl font-black">MK Top Cleans</h3>
-      <p className="mt-2 text-gray-300">
-        Professional Cleaning Services
-      </p>
+          <div>
+            <h4 className="mb-4 text-xl font-black">Business Hours</h4>
+            <p>Monday - Friday</p>
+            <p>9:00 AM - 5:00 PM</p>
+            <p className="mt-4 text-sm text-slate-300">
+              Scheduled after-hours service available.
+            </p>
+          </div>
 
-      <p className="mt-6 font-semibold">
-        Phone: 919-671-0248
-      </p>
+          <div>
+            <h4 className="mb-4 text-xl font-black">Emergency Contact</h4>
+            <p className="font-semibold">24/7 Emergency Response</p>
+            <p className="mt-2">Phone: 919-671-0248</p>
+            <p className="mt-4 text-sm text-slate-300">
+              Available for urgent facility cleaning, water incidents, and
+              emergency service requests.
+            </p>
+          </div>
+        </div>
 
-      <p className="font-semibold">
-        Email: sales@mktopcleans.com
-      </p>
-    </div>
-
-    <div>
-      <h4 className="mb-4 text-xl font-black">
-        Business Hours
-      </h4>
-
-      <p>Monday - Friday</p>
-      <p>9:00 AM - 5:00 PM</p>
-
-      <p className="mt-4 text-sm text-gray-300">
-        Scheduled after-hours service available.
-      </p>
-    </div>
-
-    <div>
-      <h4 className="mb-4 text-xl font-black">
-        Emergency Contact
-      </h4>
-
-      <p className="font-semibold">
-        24/7 Emergency Response
-      </p>
-
-      <p className="mt-2">
-        Phone: 919-671-0248
-      </p>
-
-      <p className="mt-4 text-sm text-gray-300">
-        Available for urgent facility cleaning,
-        water incidents, and emergency service requests.
-      </p>
-    </div>
-
-  </div>
-
-  <div className="mx-auto mt-10 max-w-6xl border-t border-white/20 pt-6 text-center text-sm text-gray-300">
-    © {new Date().getFullYear()} MK Top Cleans. All Rights Reserved.
-  </div>
-</footer>
+        <div className="mx-auto mt-10 max-w-7xl border-t border-white/20 pt-6 text-center text-sm text-slate-300">
+          © {new Date().getFullYear()} MK Top Cleans. All Rights Reserved.
+        </div>
+      </footer>
     </main>
   );
 }
