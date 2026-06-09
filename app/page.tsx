@@ -31,15 +31,17 @@ export default function Home() {
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center opacity-35" />
         <div className="relative mx-auto max-w-6xl px-6 py-28 text-white">
           <p className="mb-3 text-sm font-bold tracking-widest">
-            MEDICAL FACILITY CLEANING
+            MEDICAL FACILITY & COMMERCIAL CLEANING
           </p>
+
           <h2 className="max-w-3xl text-4xl font-black leading-tight md:text-6xl">
-            Reliable Cleaning for Medical Offices & Commercial Buildings
+            Professional Cleaning Services Throughout North Carolina
           </h2>
+
           <p className="mt-5 max-w-2xl text-lg text-gray-100">
             MK Top Cleans provides dependable janitorial and commercial cleaning
-            services for medical offices, clinics, professional offices, and
-            business facilities.
+            services for medical offices, clinics, hospitals, professional
+            buildings, and commercial facilities.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -64,14 +66,35 @@ export default function Home() {
 
         <div className="grid gap-6 md:grid-cols-3">
           {[
-            ["Medical Office Cleaning", "Cleaning for clinics, exam rooms, waiting areas, and healthcare offices."],
-            ["Office Cleaning", "Daily, weekly, and customized cleaning for professional offices."],
-            ["Floor Care", "Stripping, waxing, buffing, and regular floor maintenance."],
-            ["Janitorial Services", "Dependable routine cleaning for commercial properties."],
-            ["Restroom Cleaning", "Detailed restroom sanitation and supply area cleaning."],
-            ["Trash & Common Areas", "Lobby, hallway, break room, and common area maintenance."],
+            [
+              "Medical Facility Cleaning",
+              "Detail-focused cleaning for clinics, exam rooms, waiting areas, healthcare offices, and medical facilities.",
+            ],
+            [
+              "Hospital & Healthcare Support",
+              "Reliable cleaning support for healthcare environments that require consistency and attention to detail.",
+            ],
+            [
+              "Office Cleaning",
+              "Daily, weekly, and customized cleaning for professional offices and business buildings.",
+            ],
+            [
+              "Floor Care",
+              "Stripping, waxing, buffing, and regular floor maintenance for commercial properties.",
+            ],
+            [
+              "Janitorial Services",
+              "Dependable routine cleaning for offices, schools, churches, and commercial facilities.",
+            ],
+            [
+              "Restroom & Common Areas",
+              "Detailed restroom sanitation, trash removal, lobby cleaning, hallways, and break room maintenance.",
+            ],
           ].map(([title, text]) => (
-            <div key={title} className="rounded-2xl border bg-white p-6 shadow-sm">
+            <div
+              key={title}
+              className="rounded-2xl border bg-white p-6 shadow-sm"
+            >
               <h4 className="mb-3 text-xl font-black">{title}</h4>
               <p className="text-gray-700">{text}</p>
             </div>
@@ -82,25 +105,76 @@ export default function Home() {
       <section id="about" className="bg-gray-50">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-2">
           <div>
-            <h3 className="mb-4 text-3xl font-black">
-              Professional Cleaning You Can Count On
-            </h3>
-            <p className="mb-4 text-gray-700">
-              MK Top Cleans serves businesses that need reliable, detailed, and
-              consistent cleaning. We understand that medical and professional
-              facilities require extra attention to detail.
+            <p className="mb-3 text-sm font-black tracking-widest text-[#13294B]">
+              ABOUT MK TOP CLEANS
             </p>
+
+            <h3 className="mb-4 text-3xl font-black">
+              Trusted Commercial Cleaning Since 2001
+            </h3>
+
+            <p className="mb-4 text-gray-700">
+              MK Top Cleans began serving commercial clients in Nashville,
+              Tennessee in 2001 and has grown into a trusted provider of
+              professional cleaning and facility maintenance services throughout
+              North Carolina.
+            </p>
+
+            <p className="mb-4 text-gray-700">
+              With the capability to manage more than{" "}
+              <strong>2 million square feet</strong> of commercial space, our
+              team delivers reliable, detail-oriented cleaning solutions for
+              healthcare facilities, medical offices, educational institutions,
+              corporate buildings, and large-scale commercial properties.
+            </p>
+
+            <p className="mb-4 text-gray-700">
+              Our experience includes servicing and supporting facilities
+              associated with respected organizations such as{" "}
+              <strong>UNC Health</strong>, <strong>WakeMed</strong>,{" "}
+              <strong>Duke Health</strong>, <strong>HP</strong>,<strong>BB&T</strong>, and other
+              leading businesses and institutions.
+            </p>
+
             <p className="text-gray-700">
-              Our goal is simple: keep your building clean, safe, and ready for
-              employees, patients, and visitors.
+              We understand that medical and professional environments demand
+              the highest standards of cleanliness, safety, and consistency. Our
+              mission is simple: keep your building clean, safe, and ready for
+              employees, patients, customers, and visitors.
             </p>
           </div>
 
           <div className="rounded-3xl bg-[#13294B] p-8 text-white">
-            <h4 className="mb-4 text-2xl font-black">Service Areas</h4>
-            <p>Raleigh • Cary • Apex • Durham • Morrisville • Wake Forest</p>
-            <p className="mt-6 font-bold">Phone: 919-671-0248</p>
-            <p className="font-bold">Email: sales@mktopcleans.com</p>
+            <h4 className="mb-6 text-2xl font-black">By The Numbers</h4>
+
+            <div className="space-y-5">
+              <div>
+                <p className="text-4xl font-black">2,000,000+</p>
+                <p className="text-gray-200">Square Feet Managed</p>
+              </div>
+
+              <div>
+                <p className="text-4xl font-black">2001</p>
+                <p className="text-gray-200">Serving Clients Since</p>
+              </div>
+
+              <div>
+                <p className="text-4xl font-black">20+ Years</p>
+                <p className="text-gray-200">
+                  Commercial Cleaning Experience
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-8 border-t border-white/20 pt-6">
+              <h5 className="mb-3 text-xl font-black">Service Areas</h5>
+              <p>
+                Serving Raleigh, Durham, Greensboro, Fayetteville, Wilson,
+                Greenville and commercial clients throughout North Carolina.
+              </p>
+              <p className="mt-6 font-bold">Phone: 919-671-0248</p>
+              <p className="font-bold">Email: sales@mktopcleans.com</p>
+            </div>
           </div>
         </div>
       </section>
@@ -110,8 +184,8 @@ export default function Home() {
           <div>
             <h3 className="mb-4 text-3xl font-black">Request a Quote</h3>
             <p className="text-gray-700">
-              Tell us about your building and cleaning needs. We will contact you
-              to discuss service options.
+              Tell us about your building and cleaning needs. We will contact
+              you to discuss service options for your facility.
             </p>
           </div>
 
@@ -119,7 +193,10 @@ export default function Home() {
             <input className="mb-4 w-full border p-3" placeholder="Name" />
             <input className="mb-4 w-full border p-3" placeholder="Email" />
             <input className="mb-4 w-full border p-3" placeholder="Phone" />
-            <input className="mb-4 w-full border p-3" placeholder="Facility Type" />
+            <input
+              className="mb-4 w-full border p-3"
+              placeholder="Facility Type"
+            />
             <textarea
               className="mb-4 h-32 w-full border p-3"
               placeholder="Message"
