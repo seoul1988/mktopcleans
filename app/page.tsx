@@ -3,12 +3,13 @@ export default function Home() {
     <main className="min-h-screen bg-white text-[#13294B]">
       <header className="sticky top-0 z-50 border-b bg-white/95 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <div>
-            <h1 className="text-2xl font-black">MK Top Cleans</h1>
-            <p className="text-xs font-bold tracking-widest text-slate-500">
-              PROFESSIONAL CLEANING SERVICES
-            </p>
-          </div>
+         <div className="flex items-center">
+			  <img
+				src="/mk-logo.png"
+				alt="MK Top Cleans"
+				className="h-14 w-auto md:h-20"
+			  />
+			</div>
 
           <nav className="hidden gap-6 text-sm font-black md:flex">
             <a href="#">HOME</a>
