@@ -164,35 +164,37 @@ export default function Home() {
         </h2>
 
         <div className="grid gap-6 md:grid-cols-3">
-          {services.map((service) => (
-            <div
-              key={service.title}
-              className="relative h-72 overflow-hidden rounded-3xl shadow-lg"
-            >
-              <Image
-                src={service.image}
-                alt={service.title}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 33vw"
-              />
+  {services.map((service) => (
+    <div
+      key={service.title}
+      className="group relative h-72 overflow-hidden rounded-3xl shadow-lg transition-all duration-500 hover:shadow-2xl"
+    >
+      <Image
+        src={service.image}
+        alt={service.title}
+        fill
+        className="object-cover transition-transform duration-700 group-hover:scale-110"
+        sizes="(max-width: 768px) 100vw, 33vw"
+      />
 
-              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/20" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/10 to-transparent transition-all duration-500 group-hover:from-black/5 group-hover:via-transparent group-hover:to-transparent" />
 
-              <div className="relative z-10 flex h-full flex-col justify-end p-7 text-white">
-                <div className="mb-3 text-4xl">{service.icon}</div>
-
-                <h3 className="mb-3 text-2xl font-black leading-tight md:text-3xl">
-                  {service.title}
-                </h3>
-
-                <p className="max-w-sm text-base leading-7 text-white/90">
-                  {service.description}
-                </p>
-              </div>
-            </div>
-          ))}
+      <div className="relative z-10 flex h-full flex-col justify-end p-7 text-white transition-all duration-500 group-hover:-translate-y-2">
+        <div className="mb-3 text-4xl transition-all duration-500 group-hover:text-3xl">
+          {service.icon}
         </div>
+
+        <h3 className="mb-3 text-3xl font-black leading-tight transition-all duration-500 group-hover:text-2xl">
+          {service.title}
+        </h3>
+
+        <p className="max-w-sm text-base leading-7 text-white/90 transition-all duration-500 group-hover:text-sm">
+          {service.description}
+        </p>
+      </div>
+    </div>
+  ))}
+</div>
       </section>
 
       <section id="about" className="bg-[#F4F8FC]">
