@@ -9,42 +9,42 @@ const services = [
     description:
       "Clinics, exam rooms, waiting areas, healthcare offices, and medical facilities.",
     icon: "🏥",
-    image: "/services/medical.jpg",
+    image: "/services/medical.png",
   },
   {
     title: "Hospital & Healthcare Support",
     description:
       "Reliable cleaning support for healthcare environments requiring consistency.",
     icon: "💗",
-    image: "/services/hospital.jpg",
+    image: "/services/hospital.png",
   },
   {
     title: "Office Cleaning",
     description:
       "Daily, weekly, and customized cleaning for professional offices and buildings.",
     icon: "🏢",
-    image: "/services/office.jpg",
+    image: "/services/office.png",
   },
   {
     title: "Floor Care",
     description:
       "Stripping, waxing, buffing, and regular commercial floor maintenance.",
     icon: "✨",
-    image: "/services/floor.jpg",
+    image: "/services/floor.png",
   },
   {
     title: "Janitorial Services",
     description:
       "Routine cleaning for offices, schools, churches, and commercial facilities.",
     icon: "🧹",
-    image: "/services/janitorial.jpg",
+    image: "/services/janitorial.png",
   },
 {
   title: "Warehouse Cleaning",
   description:
     "Industrial warehouse cleaning, floor maintenance, dust control, loading dock cleaning, and large-scale facility support.",
   icon: "🏭",
-  image: "/services/warehouse.jpg",
+  image: "/services/warehouse.png",
 },
 ];
 
