@@ -1,23 +1,53 @@
+"use client";
+
 import Image from "next/image";
+import { FormEvent } from "react";
 
 export default function Home() {
+  function sendQuoteEmail(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    const form = new FormData(e.currentTarget);
+
+    const name = String(form.get("name") || "");
+    const email = String(form.get("email") || "");
+    const phone = String(form.get("phone") || "");
+    const facilityType = String(form.get("facilityType") || "");
+    const message = String(form.get("message") || "");
+
+    const subject = "Request a Quote - MK Top Cleans";
+
+    const body = `
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Facility Type: ${facilityType}
+
+Message:
+${message}
+`;
+
+    window.location.href =
+      `mailto:sales@mktopcleans.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+
   return (
     <main className="min-h-screen bg-white text-[#13294B]">
       <header className="sticky top-0 z-50 border-b bg-white/95 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-1">
-          <a href="#" className="flex items-center">
-  <Image
-    src="/mk-logo.png"
-    alt="MK Top Cleans"
-    width={700}
-    height={240}
-    priority
-    className="h-28 w-auto md:h-32"
-  />
-</a>
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-0">
+          <a href="/" className="flex items-center">
+            <Image
+              src="/mk-logo.png"
+              alt="MK Top Cleans"
+              width={700}
+              height={240}
+              priority
+              className="h-20 w-auto md:h-24"
+            />
+          </a>
 
           <nav className="hidden gap-6 text-sm font-black md:flex">
-            <a href="#">HOME</a>
+            <a href="/">HOME</a>
             <a href="#services">SERVICES</a>
             <a href="#about">ABOUT</a>
             <a href="#quote">REQUEST QUOTE</a>
@@ -39,8 +69,6 @@ export default function Home() {
 
         <div className="relative mx-auto flex min-h-[620px] max-w-7xl items-center px-6 text-white">
           <div className="max-w-3xl">
-            
-
             <p className="mb-4 text-sm font-black tracking-[0.25em] text-[#7DD3FC]">
               MEDICAL FACILITY & COMMERCIAL CLEANING
             </p>
@@ -62,6 +90,7 @@ export default function Home() {
               >
                 Request a Quote
               </a>
+
               <a
                 href="tel:9196710248"
                 className="rounded-full border border-white px-7 py-3 text-center font-black text-white"
@@ -149,9 +178,7 @@ export default function Home() {
               <p>
                 With the capability to manage more than{" "}
                 <strong>2 million square feet</strong> of commercial space, our
-                team delivers reliable, detail-oriented cleaning solutions for
-                healthcare facilities, medical offices, educational institutions,
-                corporate buildings, and large-scale commercial properties.
+                team delivers reliable, detail-oriented cleaning solutions.
               </p>
 
               <p>
@@ -169,7 +196,9 @@ export default function Home() {
 
             <div className="space-y-6">
               <div>
-                <p className="text-4xl font-black text-[#7DD3FC]">2,000,000+</p>
+                <p className="text-4xl font-black text-[#7DD3FC]">
+                  2,000,000+
+                </p>
                 <p>Square Feet Managed</p>
               </div>
 
@@ -223,9 +252,11 @@ export default function Home() {
             <p className="mb-3 text-sm font-black tracking-widest text-[#0B3A75]">
               REQUEST A QUOTE
             </p>
+
             <h2 className="mb-4 text-3xl font-black md:text-4xl">
               Let’s Talk About Your Building
             </h2>
+
             <p className="leading-8 text-slate-700">
               Tell us about your facility, square footage, service schedule, and
               cleaning needs. We will contact you to discuss the best service
@@ -233,22 +264,50 @@ export default function Home() {
             </p>
           </div>
 
-          <form className="rounded-3xl border bg-white p-7 shadow-xl">
-            <input className="mb-4 w-full rounded-lg border p-3" placeholder="Name" />
-            <input className="mb-4 w-full rounded-lg border p-3" placeholder="Email" />
-            <input className="mb-4 w-full rounded-lg border p-3" placeholder="Phone" />
+          <form
+            onSubmit={sendQuoteEmail}
+            className="rounded-3xl border bg-white p-7 shadow-xl"
+          >
             <input
+              name="name"
+              className="mb-4 w-full rounded-lg border p-3"
+              placeholder="Name"
+              required
+            />
+
+            <input
+              name="email"
+              type="email"
+              className="mb-4 w-full rounded-lg border p-3"
+              placeholder="Email"
+            />
+
+            <input
+              name="phone"
+              className="mb-4 w-full rounded-lg border p-3"
+              placeholder="Phone"
+              required
+            />
+
+            <input
+              name="facilityType"
               className="mb-4 w-full rounded-lg border p-3"
               placeholder="Facility Type"
             />
-           
-           <a
-			  href="mailto:sales@mktopcleans.com?subject=Request%20a%20Quote%20-%20MK%20Top%20Cleans&body=Name:%0D%0APhone:%0D%0AFacility%20Type:%0D%0AMessage:%0D%0A"
-			  className="block rounded-full bg-[#13294B] px-6 py-3 text-center font-black text-white"
-			>
-			  Email Us for a Quote
-			</a>
-       
+
+            <textarea
+              name="message"
+              className="mb-4 min-h-32 w-full rounded-lg border p-3"
+              placeholder="Message"
+            />
+
+            <button
+              type="submit"
+              className="block w-full rounded-full bg-[#13294B] px-6 py-3 text-center font-black text-white"
+            >
+              Email Us for a Quote
+            </button>
+          </form>
         </div>
       </section>
 
