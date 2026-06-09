@@ -9,8 +9,8 @@ export default function Home() {
             <Image
               src="/mk-logo.png"
               alt="MK Top Cleans"
-              width={260}
-              height={90}
+              width={320}
+              height={140}
               priority
               className="h-14 w-auto md:h-16"
             />
@@ -39,14 +39,7 @@ export default function Home() {
 
         <div className="relative mx-auto flex min-h-[620px] max-w-7xl items-center px-6 text-white">
           <div className="max-w-3xl">
-            <Image
-              src="/mk-logo.png"
-              alt="MK Top Cleans"
-              width={360}
-              height={130}
-              priority
-              className="mb-8 h-24 w-auto rounded-xl bg-white/95 p-3 shadow-lg md:h-28"
-            />
+            
 
             <p className="mb-4 text-sm font-black tracking-[0.25em] text-[#7DD3FC]">
               MEDICAL FACILITY & COMMERCIAL CLEANING
