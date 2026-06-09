@@ -6,49 +6,41 @@ export async function POST(req: Request) {
     const apiKey = process.env.RESEND_API_KEY;
 
     if (!apiKey) {
-      console.error("RESEND_API_KEY is missing");
       return NextResponse.json(
-        { error: "Missing RESEND_API_KEY" },
+        { error: "RESEND_API_KEY is missing" },
         { status: 500 }
       );
     }
 
-    const resend = new Resend(apiKey);
-
     const body = await req.json();
-
     const { name, email, phone, facilityType, message } = body;
 
-    if (!name || !phone) {
-      return NextResponse.json(
-        { error: "Name and phone are required" },
-        { status: 400 }
-      );
+    const resend = new Resend(apiKey);
+
+    const { data, error } = await resend.emails.send({
+      from: "MK Top Cleans <onboarding@resend.dev>",
+      to: ["mbsproinc@gmail.com"],
+      subject: "New Quote Request - MK Top Cleans",
+      replyTo: email || undefined,
+      html: `
+        <h2>New Quote Request</h2>
+        <p><strong>Name:</strong> ${name || "N/A"}</p>
+        <p><strong>Email:</strong> ${email || "N/A"}</p>
+        <p><strong>Phone:</strong> ${phone || "N/A"}</p>
+        <p><strong>Facility Type:</strong> ${facilityType || "N/A"}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message || "N/A"}</p>
+      `,
+    });
+
+    if (error) {
+      console.error("RESEND ERROR:", error);
+      return NextResponse.json({ error }, { status: 500 });
     }
 
-   const result = await resend.emails.send({
-  from: "MK Top Cleans <onboarding@resend.dev>",
-  to: ["mbsproinc@gmail.com"],
-  subject: "New Quote Request - MK Top Cleans",
-  replyTo: email || undefined,
-  html: `
-    <h2>New Quote Request</h2>
-    <p><strong>Name:</strong> ${name}</p>
-    <p><strong>Email:</strong> ${email || "N/A"}</p>
-    <p><strong>Phone:</strong> ${phone}</p>
-    <p><strong>Facility Type:</strong> ${facilityType || "N/A"}</p>
-    <p><strong>Message:</strong></p>
-    <p>${message || "N/A"}</p>
-  `,
-});
-
-    return NextResponse.json({ success: true, result });
+    return NextResponse.json({ success: true, data });
   } catch (error) {
     console.error("CONTACT API ERROR:", error);
-
-    return NextResponse.json(
-      { error: "Failed to send email" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: String(error) }, { status: 500 });
   }
 }
