@@ -1,34 +1,86 @@
 "use client";
 
 import Image from "next/image";
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
+
+const services = [
+  {
+    title: "Medical Facility Cleaning",
+    description:
+      "Clinics, exam rooms, waiting areas, healthcare offices, and medical facilities.",
+    icon: "🏥",
+    image: "/services/medical.jpg",
+  },
+  {
+    title: "Hospital & Healthcare Support",
+    description:
+      "Reliable cleaning support for healthcare environments requiring consistency.",
+    icon: "💗",
+    image: "/services/hospital.jpg",
+  },
+  {
+    title: "Office Cleaning",
+    description:
+      "Daily, weekly, and customized cleaning for professional offices and buildings.",
+    icon: "🏢",
+    image: "/services/office.jpg",
+  },
+  {
+    title: "Floor Care",
+    description:
+      "Stripping, waxing, buffing, and regular commercial floor maintenance.",
+    icon: "✨",
+    image: "/services/floor.jpg",
+  },
+  {
+    title: "Janitorial Services",
+    description:
+      "Routine cleaning for offices, schools, churches, and commercial facilities.",
+    icon: "🧹",
+    image: "/services/janitorial.jpg",
+  },
+{
+  title: "Warehouse Cleaning",
+  description:
+    "Industrial warehouse cleaning, floor maintenance, dust control, loading dock cleaning, and large-scale facility support.",
+  icon: "🏭",
+  image: "/services/warehouse.jpg",
+},
+];
 
 export default function Home() {
-  function sendQuoteEmail(e: FormEvent<HTMLFormElement>) {
+  const [sending, setSending] = useState(false);
+
+  async function submitQuote(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setSending(true);
 
     const form = new FormData(e.currentTarget);
 
-    const name = String(form.get("name") || "");
-    const email = String(form.get("email") || "");
-    const phone = String(form.get("phone") || "");
-    const facilityType = String(form.get("facilityType") || "");
-    const message = String(form.get("message") || "");
+    const payload = {
+      name: form.get("name"),
+      email: form.get("email"),
+      phone: form.get("phone"),
+      facilityType: form.get("facilityType"),
+      message: form.get("message"),
+    };
 
-    const subject = "Request a Quote - MK Top Cleans";
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
 
-    const body = `
-Name: ${name}
-Email: ${email}
-Phone: ${phone}
-Facility Type: ${facilityType}
+    setSending(false);
 
-Message:
-${message}
-`;
-
-    window.location.href =
-      `mailto:sales@mktopcleans.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    if (res.ok) {
+      alert("Quote request sent successfully.");
+      e.currentTarget.reset();
+    } else {
+      alert("Failed to send request. Please call 919-671-0248.");
+    }
   }
 
   return (
@@ -112,45 +164,32 @@ ${message}
         </h2>
 
         <div className="grid gap-6 md:grid-cols-3">
-          {[
-            [
-              "🏥",
-              "Medical Facility Cleaning",
-              "Clinics, exam rooms, waiting areas, healthcare offices, and medical facilities.",
-            ],
-            [
-              "🧼",
-              "Hospital & Healthcare Support",
-              "Reliable cleaning support for healthcare environments requiring consistency.",
-            ],
-            [
-              "🏢",
-              "Office Cleaning",
-              "Daily, weekly, and customized cleaning for professional offices and buildings.",
-            ],
-            [
-              "✨",
-              "Floor Care",
-              "Stripping, waxing, buffing, and regular commercial floor maintenance.",
-            ],
-            [
-              "🧹",
-              "Janitorial Services",
-              "Routine cleaning for offices, schools, churches, and commercial facilities.",
-            ],
-            [
-              "🚻",
-              "Restroom & Common Areas",
-              "Restroom sanitation, trash removal, lobbies, hallways, and break rooms.",
-            ],
-          ].map(([icon, title, text]) => (
+          {services.map((service) => (
             <div
-              key={title}
-              className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+              key={service.title}
+              className="relative h-72 overflow-hidden rounded-3xl shadow-lg"
             >
-              <div className="mb-4 text-4xl">{icon}</div>
-              <h3 className="mb-3 text-xl font-black">{title}</h3>
-              <p className="leading-7 text-slate-600">{text}</p>
+              <Image
+                src={service.image}
+                alt={service.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/20" />
+
+              <div className="relative z-10 flex h-full flex-col justify-end p-7 text-white">
+                <div className="mb-3 text-4xl">{service.icon}</div>
+
+                <h3 className="mb-3 text-2xl font-black leading-tight md:text-3xl">
+                  {service.title}
+                </h3>
+
+                <p className="max-w-sm text-base leading-7 text-white/90">
+                  {service.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
@@ -178,7 +217,9 @@ ${message}
               <p>
                 With the capability to manage more than{" "}
                 <strong>2 million square feet</strong> of commercial space, our
-                team delivers reliable, detail-oriented cleaning solutions.
+                team delivers reliable, detail-oriented cleaning solutions for
+                healthcare facilities, medical offices, educational institutions,
+                corporate buildings, and large-scale commercial properties.
               </p>
 
               <p>
@@ -265,7 +306,7 @@ ${message}
           </div>
 
           <form
-            onSubmit={sendQuoteEmail}
+            onSubmit={submitQuote}
             className="rounded-3xl border bg-white p-7 shadow-xl"
           >
             <input
@@ -303,9 +344,10 @@ ${message}
 
             <button
               type="submit"
-              className="block w-full rounded-full bg-[#13294B] px-6 py-3 text-center font-black text-white"
+              disabled={sending}
+              className="block w-full rounded-full bg-[#13294B] px-6 py-3 text-center font-black text-white disabled:opacity-60"
             >
-              Email Us for a Quote
+              {sending ? "Sending..." : "Request Quote"}
             </button>
           </form>
         </div>
