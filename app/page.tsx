@@ -211,14 +211,62 @@ export default function Home() {
         </div>
       </section>
 
-      <footer id="contact" className="bg-[#13294B] px-6 py-10 text-white">
-        <div className="mx-auto max-w-6xl">
-          <h3 className="text-2xl font-black">MK Top Cleans</h3>
-          <p className="mt-2">Professional Cleaning Services</p>
-          <p className="mt-4">Phone: 919-671-0248</p>
-          <p>Email: sales@mktopcleans.com</p>
-        </div>
-      </footer>
+  <footer id="contact" className="bg-[#13294B] px-6 py-12 text-white">
+  <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-3">
+
+    <div>
+      <h3 className="text-2xl font-black">MK Top Cleans</h3>
+      <p className="mt-2 text-gray-300">
+        Professional Cleaning Services
+      </p>
+
+      <p className="mt-6 font-semibold">
+        Phone: 919-671-0248
+      </p>
+
+      <p className="font-semibold">
+        Email: sales@mktopcleans.com
+      </p>
+    </div>
+
+    <div>
+      <h4 className="mb-4 text-xl font-black">
+        Business Hours
+      </h4>
+
+      <p>Monday - Friday</p>
+      <p>9:00 AM - 5:00 PM</p>
+
+      <p className="mt-4 text-sm text-gray-300">
+        Scheduled after-hours service available.
+      </p>
+    </div>
+
+    <div>
+      <h4 className="mb-4 text-xl font-black">
+        Emergency Contact
+      </h4>
+
+      <p className="font-semibold">
+        24/7 Emergency Response
+      </p>
+
+      <p className="mt-2">
+        Phone: 919-671-0248
+      </p>
+
+      <p className="mt-4 text-sm text-gray-300">
+        Available for urgent facility cleaning,
+        water incidents, and emergency service requests.
+      </p>
+    </div>
+
+  </div>
+
+  <div className="mx-auto mt-10 max-w-6xl border-t border-white/20 pt-6 text-center text-sm text-gray-300">
+    © {new Date().getFullYear()} MK Top Cleans. All Rights Reserved.
+  </div>
+</footer>
     </main>
   );
 }
