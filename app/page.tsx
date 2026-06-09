@@ -75,12 +75,16 @@ export default function Home() {
 
     setSending(false);
 
-    if (res.ok) {
-      alert("Quote request sent successfully.");
-      e.currentTarget.reset();
-    } else {
-      alert("Failed to send request. Please call 919-671-0248.");
-    }
+    const result = await res.json();
+
+setSending(false);
+
+if (res.ok) {
+  alert("Quote request sent successfully.");
+  e.currentTarget.reset();
+} else {
+  alert(`Failed: ${JSON.stringify(result)}`);
+}
   }
 
   return (
