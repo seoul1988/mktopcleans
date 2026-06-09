@@ -4,17 +4,17 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-[#13294B]">
       <header className="sticky top-0 z-50 border-b bg-white/95 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
           <a href="#" className="flex items-center">
-            <Image
-              src="/mk-logo.png"
-              alt="MK Top Cleans"
-              width={500}
-              height={160}
-              priority
-              className="h-20 w-auto md:h-24"
-            />
-          </a>
+  <Image
+    src="/mk-logo.png"
+    alt="MK Top Cleans"
+    width={700}
+    height={240}
+    priority
+    className="h-28 w-auto md:h-32"
+  />
+</a>
 
           <nav className="hidden gap-6 text-sm font-black md:flex">
             <a href="#">HOME</a>
