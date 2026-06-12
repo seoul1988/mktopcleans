@@ -25,7 +25,7 @@ export async function POST(req: Request) {
 
     await resend.emails.send({
       from: "MK Top Cleans <noreply@mktopcleans.com>",
-      to: ["sales@mktopcleans.com"],
+      to: ["minu@mktopcleans.com"],
       replyTo: email ? String(email) : undefined,
       subject: "New Quote Request - MK Top Cleans",
       html: `
