@@ -269,7 +269,7 @@ if (res.ok) {
                 and commercial clients throughout North Carolina.
               </p>
               <p className="mt-6 font-bold">Phone: 919-671-0248</p>
-              <p className="font-bold">Email: sales@mktopcleans.com</p>
+              <p className="font-bold">Email: minu@mktopcleans.com</p>
             </div>
           </div>
         </div>
@@ -373,7 +373,7 @@ if (res.ok) {
             />
             <p className="text-slate-300">Professional Cleaning Services</p>
             <p className="mt-6 font-semibold">Phone: 919-671-0248</p>
-            <p className="font-semibold">Email: sales@mktopcleans.com</p>
+            <p className="font-semibold">Email: minu@mktopcleans.com</p>
           </div>
 
           <div>
